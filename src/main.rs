@@ -22,17 +22,26 @@ Options Description
 #[command(author, version, about, long_about = None)]
 struct Args {
 
-    /// Display the matched lines and their line numbers.
-    #[arg(short='n', action, required = false)]
-    display_only_line_and_numbers: bool,
+    /// This prints only a count of the lines that match a pattern 
+    #[arg(short='c', action, required = false)]
+    print_count: bool,
 
     /// Ignores, case for matching
     #[arg(short='i', action, required = false)]
     case_insensitive: bool,
 
-    /// This prints only a count of the lines that match a pattern 
-    #[arg(short='c', action, required = false)]
-    print_count: bool,
+    /// Displays list of a filenames only. 
+    #[arg(short='l', action, required = false)]
+    list_files_only: bool,
+
+    /// Display the matched lines and their line numbers.
+    #[arg(short='n', action, required = false)]
+    display_only_line_and_numbers: bool,
+
+    /// This prints out all the lines that do not matches the pattern
+    #[arg(short='v', action, required = false)]
+    display_only_nonmatching_line: bool, 
+
 }
 
 fn main() {
