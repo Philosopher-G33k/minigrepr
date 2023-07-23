@@ -1,6 +1,6 @@
 
 use clap::Parser;
-
+use minigrepr::search;
 
 
 /*
@@ -52,4 +52,5 @@ fn main() {
     println!("{:#?}", args);
     println!("should print line {}", args.print_count);
     println!("is case insensitive {}", args.case_insensitive);
+    search(args.pattern, args.search_in_text);
 }
