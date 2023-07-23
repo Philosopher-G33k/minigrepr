@@ -22,6 +22,9 @@ Options Description
 #[command(author, version, about, long_about = None)]
 struct Args {
 
+    pattern: String,
+    search_in_text: String,
+
     /// This prints only a count of the lines that match a pattern 
     #[arg(short='c', action, required = false)]
     print_count: bool,
@@ -46,6 +49,7 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
+    println!("{:#?}", args);
     println!("should print line {}", args.print_count);
     println!("is case insensitive {}", args.case_insensitive);
 }
